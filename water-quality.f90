@@ -1854,7 +1854,7 @@ ENTRY DERIVED_CONSTITUENTS
           ENDIF
           END DO
           TOTSS(K,I) = TOTSS(K,I)+TISS(K,I)+POM(K,I)
-          NTU(K,I) = NTU(K,I) +  POM(K,I)*NTUPOM(JW)   !CSW 7/20/2021
+          NTU(K,I) = NTU(K,I) +  DOM(K,I)*NTUDOM(JW)   !CSW 7/20/2021
         END DO
       END DO
     END DO

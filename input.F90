@@ -158,9 +158,9 @@ END IF
   ALLOCATE (CAQ10(NWB),  CADK(NWB),   CAS(NWB))
   ALLOCATE (BODP(NBOD),  BODN(NBOD),  BODC(NBOD))
   ALLOCATE (KBOD(NBOD),  TBOD(NBOD),  RBOD(NBOD))
-  ALLOCATE (LDOMDK(NWB), RDOMDK(NWB), LRDDK(NWB))
+  ALLOCATE (LDOMDK(NWB), RDOMDK(NWB), LRDDK(NWB),  NTUDOM(NWB))    !CSW 7/20
   ALLOCATE (OMT1(NWB),   OMT2(NWB),   OMK1(NWB),   OMK2(NWB))
-  ALLOCATE (LPOMDK(NWB), RPOMDK(NWB), LRPDK(NWB),  POMS(NWB),   NTUPOM(NWB))    !CSW 7/20    !CSW 7/20/2021
+  ALLOCATE (LPOMDK(NWB), RPOMDK(NWB), LRPDK(NWB),  POMS(NWB))
   ALLOCATE (ORGP(NWB),   ORGN(NWB),   ORGC(NWB),   ORGSI(NWB))
   ALLOCATE (RCOEF1(NWB), RCOEF2(NWB), RCOEF3(NWB), RCOEF4(NWB))
   ALLOCATE (NH4T1(NWB),  NH4T2(NWB),  NH4K1(NWB),  NH4K2(NWB))
@@ -787,8 +787,8 @@ ENDIF
   READ (CON,'(//(8X,8F8.0))')         (MT1(JM),    MT2(JM),    MT3(JM),    MT4(JM),    MK1(JM),   MK2(JM),                         &
                                        MK3(JM),    MK4(JM),                                                    JM=1,NMCT)
   READ (CON,'(//(8X,3F8.0))')         (MP(JM),     MN(JM),     MC(JM),                                         JM=1,NMCT)
-  READ (CON,'(//(8X,3F8.0))')         (LDOMDK(JW), RDOMDK(JW), LRDDK(JW),                                      JW=1,NWB)
-  READ (CON,'(//(8X,5F8.0))')         (LPOMDK(JW), RPOMDK(JW), LRPDK(JW),  POMS(JW),  NTUPOM(JW),              JW=1,NWB)  !CSW
+  READ (CON,'(//(8X,4F8.0))')         (LDOMDK(JW), RDOMDK(JW), LRDDK(JW), NTUDOM(JW),                          JW=1,NWB)  !CSW
+  READ (CON,'(//(8X,4F8.0))')         (LPOMDK(JW), RPOMDK(JW), LRPDK(JW),  POMS(JW),                           JW=1,NWB)  
   READ (CON,'(//(8X,4F8.0))')         (ORGP(JW),   ORGN(JW),   ORGC(JW),   ORGSI(JW),                          JW=1,NWB)
   READ (CON,'(//(8X,4F8.0))')         (OMT1(JW),   OMT2(JW),   OMK1(JW),   OMK2(JW),                           JW=1,NWB)
   READ (CON,'(//(8X,4F8.0))')         (KBOD(JB),   TBOD(JB),   RBOD(JB), CBODS(JB),                           JB=1,NBOD)
