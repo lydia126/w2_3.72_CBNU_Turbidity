@@ -975,8 +975,9 @@ SUBROUTINE OUTPUTA
       END DO  
         
       WRITE(VPL(1)) ((WSEL(I)),I=1,IMX)  
-      WRITE(VPL(1)) ((REAL(U(K,I),4),K=1,KMX),I=1,IMX)  
-  !   WRITE(VPL(1)) ((REAL(W(K,I),4),K=1,KMX),I=1,IMX)        !CSW 7/22/2021 
+  !   WRITE(VPL(1)) ((REAL(U(K,I),4),K=1,KMX),I=1,IMX)
+  !   WRITE(VPL(1)) ((REAL(W(K,I),4),K=1,KMX),I=1,IMX)         
+      WRITE(VPL(1)) ((REAL(GAMMA(K,I),4),K=1,KMX),I=1,IMX)  !CSW 7/22/2021
       WRITE(VPL(1)) ((REAL(NTU(K,I),4),K=1,KMX),I=1,IMX)      !CSW 7/22/2021  
         
       DO I = 1,IMX
@@ -1046,7 +1047,7 @@ SUBROUTINE OUTPUTA
     
   ! Snapshot formats  
     
-10490 FORMAT ('CE-QUAL-W2 VERSION',F4.2/                                                                                          &  
+10490 FORMAT ('CE-QUAL-W2 VERSION',F5.2/                                                                                          &  
               (1X,A72))  
 10500 FORMAT (/1X,A/                                                                                                               &  
               3X,'Gregorian date      [GDAY] =',A19,1X,I0,', ',I0/                                                                 &  
@@ -1121,7 +1122,7 @@ SUBROUTINE OUTPUTA
 10755 format (3x,'Cumulative evaporation [VOLEV]'/                                                                                 &  
               (:3X,'  Branch ',I0,' = ',F0.1,' m^3'))  
 10760 FORMAT (3X,'Precipitation [PR]'/                                                                                             &  
-              (3X,'  Branch ',I0,' = ',F8.6),' m/s')  
+              (3X,'  Branch ',I0,' = ',F9.6),' m/s')  
 10770 FORMAT (/1X,'External head boundary elevations'/)  
 10780 FORMAT (3X,'Branch ',I0/5X,'Upstream elevation   [ELUH] =',F8.3,' m')  
 10790 FORMAT (3X,'Branch ',I0/5X,'Downstream elevation [ELDH] =',F8.3,' m')  

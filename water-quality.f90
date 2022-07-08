@@ -1813,6 +1813,7 @@ ENTRY DERIVED_CONSTITUENTS
           POM(K,I) = LPOM(K,I)+RPOM(K,I)
           DOC(K,I) = DOM(K,I)*ORGC(JW)+CBODCt             ! cb 6/6/10
           POC(K,I) = POM(K,I)*ORGC(JW)
+          NTU(K,I) = NTU(K,I) + NTUINT(JW)    !CSW
           DO JA=1,NAL
           IF(ALG_CALC(JA))THEN
             POC(K,I) = POC(K,I)+ALG(K,I,JA)*AC(JA)
@@ -1854,7 +1855,7 @@ ENTRY DERIVED_CONSTITUENTS
           ENDIF
           END DO
           TOTSS(K,I) = TOTSS(K,I)+TISS(K,I)+POM(K,I)
-          NTU(K,I) = NTU(K,I) +  DOM(K,I)*NTUDOM(JW)   !CSW 7/20/2021
+          NTU(K,I) = NTU(K,I) +  POM(K,I)*NTUDOM(JW)   !CSW 7/20/2021
         END DO
       END DO
     END DO

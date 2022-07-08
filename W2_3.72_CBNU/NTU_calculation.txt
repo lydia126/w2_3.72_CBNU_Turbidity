@@ -1,0 +1,10 @@
+! Turbidity Calcuation
+      ALGNTU = 0.0; SSNTU = 0.0; POMNTU = 0.0                                                     ! SW 11/8/07
+        DO JA=1,NAL
+          IF(ALG_CALC(JA)) ALGNTU = ALGNTU+NTUALG(JA)*ALG(K,I,JA)
+        END DO
+        DO JS=1,NSS
+          SSNTU = SSNTU+NTUISS(JW)*SS(K,I,JS)
+        END DO
+		
+		NTU(K,I) = NTUINT(JW)+SSNTU+NTUDOOM(JW)*(LPOM(K,I)+RPOM(K,I))+ALGNTU         ! sw 4/21/11
